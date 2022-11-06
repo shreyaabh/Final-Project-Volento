@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ka=%*&)k_2up7xj8*0$la$8&py@0%7=n*fm6q4)d!b#z+f7$ec
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['4f48-103-174-84-107.in.ngrok.io']
 
 
 # Application definition
@@ -39,9 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'event',
     'rest_framework',
+    'rest_framework.authtoken',
     'django_admin_geomap',
     'user',
     'knox',
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
@@ -52,6 +54,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
 ]
 
 REST_FRAMEWORK = {

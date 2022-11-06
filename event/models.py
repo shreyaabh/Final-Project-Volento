@@ -67,6 +67,7 @@ class Event(models.Model):
     # uid = models.PositiveIntegerField(unique=True)
     description = models.TextField()    
     venue = models.ForeignKey(Location, on_delete=models.CASCADE)
+    location=models.CharField(max_length=255, unique=True)
     start_time = models.CharField(max_length=255)
     start_date = models.DateField()
     end_date = models.DateField()
@@ -145,6 +146,12 @@ class EventMember(models.Model):
     
     def get_absolute_url(self):
         return reverse('join-event-list')
+
+    # def get_queryset(self):
+    #     request = self.context.get('request', None)
+    #     if request.user is not None:
+    #         print(request.user)
+    #         print(request.user.id)
 
     # def total_points(self):
     #     point= request.POST.point

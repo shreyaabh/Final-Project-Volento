@@ -33,6 +33,7 @@ urlpatterns = [
     path('api/eventwishlist/', views.EventUserWishListList.as_view()),
     path('api/user-eventlist/', views.UserEventList.as_view()),
     path('api/user-eventcreatedlist/', views.UserEventCreatedList.as_view()),
+    path('api/user-point/', views.pointHandlerApi, name='userpoint'),
     path('user', include('user.urls'))
 ]
 
